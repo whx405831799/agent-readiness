@@ -1,0 +1,26 @@
+{
+  "name": "agent-readiness-cli",
+  "version": "0.0.1",
+  "private": true,
+  "description": "Dev workspace for the agent-readiness skill's bundled validate/score/dashboard CLI.",
+  "type": "module",
+  "license": "MIT",
+  "author": "Arthur Zhang",
+  "engines": {
+    "node": ">=18.17"
+  },
+  "scripts": {
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "test": "node --test --import tsx ./src/**/*.test.ts",
+    "bundle": "esbuild src/cli.ts --bundle --platform=node --format=esm --target=node18.17 --minify --banner:js='#!/usr/bin/env node' --outfile=../agent-readiness/bin/agent-readiness.mjs"
+  },
+  "dependencies": {
+    "zod": "^3.23.8"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.0",
+    "esbuild": "^0.24.2",
+    "tsx": "^4.19.0",
+    "typescript": "^5.6.0"
+  }
+}

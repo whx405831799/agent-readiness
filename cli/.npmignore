@@ -1,0 +1,10 @@
+.claude/
+src/
+examples/
+node_modules/
+*.test.ts
+*.test.js
+*.test.d.ts
+tsconfig.json
+.npmignore
+*.tgz
